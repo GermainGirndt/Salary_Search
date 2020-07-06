@@ -5,7 +5,6 @@ import re
 
 class SalarySearcher():
 
-
     def __init__(self):
         self.get_country_digit()
         self.get_income_range()
@@ -50,9 +49,9 @@ class SalarySearcher():
 
     def relate_country_digit_to_link(self):
         DICTIONARY_DIGIT_COUNTRY = {
-            '1' : "https://www.lohnanalyse.de/at/loehne.html",
-            '2' : "https://www.lohnanalyse.de/ch/loehne.html",
-            '3' :  "https://www.lohnanalyse.de/de/loehne.html"
+            '1': "https://www.lohnanalyse.de/de/loehne.html",
+            '2': "https://www.lohnanalyse.de/ch/loehne.html",
+            '3': "https://www.lohnanalyse.de/at/loehne.html",
         }
         self.link = DICTIONARY_DIGIT_COUNTRY[self.country_digit]
 
@@ -63,7 +62,7 @@ class SalarySearcher():
         self.jobs = soup.find_all(class_='job col odd')
 
     def get_job_title(self, job):
-        job_name = job.find(class_='job-title').get_text().replace("\n","").replace("\t","")
+        job_name = job.find(class_='job-title').get_text().replace("\n", "").replace("\t", "")
         return job_name
 
     def get_job_salary(self, job):
@@ -72,7 +71,7 @@ class SalarySearcher():
 
     def filter_jobs_by_income_range(self):
         self.filtered_jobs_by_income = [
-            job for job in self.jobs if self.min_salary < int(self.get_job_salary(job)) < self.max_salary
+            job for job in self.jobs if self.min_salary <= int(self.get_job_salary(job)) <= self.max_salary
         ]
 
     def extract_job_title_and_salary(self):
