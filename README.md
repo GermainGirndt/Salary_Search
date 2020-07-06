@@ -1,10 +1,13 @@
-# salary_search
+# :dollar: Salary_Search
 My first web scrapping app. - Working on 8th May 2020
 
-### Description
+### :star2: Description
 Salary_search reads salary data from https://www.lohnanalyse.de/ and filters it by salary and country (de, at, ch), according to user input.
 
-### How to Use (Python 3.7.3)
+### :mag_right: Preview
+![image](https://github.com/GermainPereira/Salary_Search/blob/master/preview-2020-07-06%2009-00.gif?raw=true)
+
+### :notebook: How to Use (Python 3.7.3)
 
 Run on your terminal:  
 1) `pip install bs4` - for using BeautifulSoup
@@ -12,5 +15,3 @@ Run on your terminal:
 3) `python salary_search.py`   
 ...and see the magic happen.
 
-### Preview
-![image](https://user-images.githubusercontent.com/52306002/81445871-1c834e80-9150-11ea-9063-7e1bd373fd02.png)
